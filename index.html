@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holidae</title>
+
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER NAVIGATION -->
+    <header>
+        <!-- Logo — clicking it goes to Home -->
+        <div class="logo" onclick="showPage('home')">Holida<span>e</span></div>
+
+        <!-- Desktop navigation links -->
+        <ul class="nav-links">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('destinations')">Destinations</a></li>
+            <li><a href="#" onclick="showPage('packages')">Packages</a></li>
+            <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+
+        <!-- Book Now button -->
+        <a href="#" class="nav-button" onclick="showPage('booking')">Book Now</a>
+
+        <!-- Hamburger icon only shows on mobile -->
+        <div class="mobile-menu-icon" id="mobileMenuIcon" onclick="toggleMenu()">&#9776;</div>
+    </header>
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" onclick="showPage('home'); toggleMenu()">Home</a>
+        <a href="#" onclick="showPage('destinations'); toggleMenu()">Destinations</a>
+        <a href="#" onclick="showPage('packages'); toggleMenu()">Packages</a>
+        <a href="#" onclick="showPage('gallery'); toggleMenu()">Gallery</a>
+        <a href="#" onclick="showPage('contact'); toggleMenu()">Contact</a>
+    </div>
+
+    <!-- PAGE: HOME -->
+    <div id="page-home" class="page active">
+
+        <!-- Hero Section — big background image with text -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="tag">CURATED TRAVEL EXPERIENCES</p>
+                <h1>Discover the <br>
+                    <span class="highlight">world's most</span><br>
+                    beautiful places
+                </h1>
+                <p class="subtext">
+                    We craft bespoke journeys that connect you with the soul of every destination
+                    from mountain peaks to hidden coastlines.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary" onclick="showPage('destinations')">Explore Destinations</a>
+                    <a href="#" class="btn-secondary" onclick="showPage('packages')">View Packages</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Strip -->
+        <div class="stats-strip">
+            <div class="stats-inner">
+                <div>
+                    <div class="stat-num">120+</div>
+                    <div class="stat-label">Destinations</div>
+                </div>
+                <div>
+                    <div class="stat-num">48K</div>
+                    <div class="stat-label">Happy Travellers</div>
+                </div>
+                <div>
+                    <div class="stat-num">15</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div>
+                    <div class="stat-num">4.9★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Destinations on Home -->
+        <section class="section">
+            <div class="container">
+                <p class="section-label">Top Picks</p>
+                <h2 class="section-title">Destinations we<br>love right now</h2>
+                <div class="destination-grid">
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/santorini- greece.jpg" alt="Greece">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Trending</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Santorini, Greece</h3>
+                            <div class="meta">
+                                <span>5 nights</span>
+                                <div class="dot"></div>
+                                <span>Island Escape</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">12,090 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/ankara turkey.webp" alt="Turkey">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Cultural</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Ankara, Turkey</h3>
+                            <div class="meta">
+                                <span>8 nights</span>
+                                <div class="dot"></div>
+                                <span>Cultural & Heritage</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">11,880 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/Bali-indonesia.jpg" alt="Bali">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Popular</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Bali, Indonesia</h3>
+                            <div class="meta">
+                                <span>7 nights</span>
+                                <div class="dot"></div>
+                                <span>Cultural & Beaches</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">12,290 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Call To Action Band -->
+        <div class="cta-band">
+            <h2>Ready for your next adventure?</h2>
+            <p>Let us plan the perfect trip just for you.</p>
+            <button class="btn-primary" onclick="showPage('booking')">Book Your Trip Now</button>
+        </div>
+
+    </div><!-- end page-home -->
+
+    <!-- PAGE: DESTINATIONS -->
+    <div id="page-destinations" class="page">
+
+        <div class="page-hero">
+            <h1>Our Destinations</h1>
+            <p>From sunny coastlines to ancient mountain kingdoms, the world awaits.</p>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="destination-grid">
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/santorini- greece.jpg" alt="Greece">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Trending</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Santorini, Greece</h3>
+                            <div class="meta"><span>5 nights</span>
+                                <div class="dot"></div><span>Island Escape</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">12,090 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/ankara turkey.webp" alt="Turkey">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Cultural</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Ankara, Turkey</h3>
+                            <div class="meta"><span>8 nights</span>
+                                <div class="dot"></div><span>Cultural & Heritage</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">11,880 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/Bali-indonesia.jpg" alt="Bali">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Popular</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Bali, Indonesia</h3>
+                            <div class="meta"><span>7 nights</span>
+                                <div class="dot"></div><span>Cultural & Beaches</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">10,290 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/hero1.avif" alt="Maldives">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Luxury</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Maldives</h3>
+                            <div class="meta"><span>6 nights</span>
+                                <div class="dot"></div><span>Beach & Luxury</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">14,200 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/japan.avif" alt="Japan">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Cultural</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Kyoto, Japan</h3>
+                            <div class="meta"><span>8 nights</span>
+                                <div class="dot"></div><span>Heritage & Zen</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">11,880 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" onclick="showPage('packages')">
+                        <div class="destination-card-img">
+                            <img src="photos/Paris.jpg" alt="Paris">
+                            <div class="overlay"></div>
+                            <div class="destination-tag">Popular</div>
+                        </div>
+                        <div class="destination-card-body">
+                            <h3>Paris, France</h3>
+                            <div class="meta"><span>5 nights</span>
+                                <div class="dot"></div><span>Romance & Culture</span>
+                            </div>
+                            <div class="destination-card-footer">
+                                <div class="price">12,300 AED <span>/ person</span></div>
+                                <button class="btn-outline"
+                                    onclick="event.stopPropagation(); showPage('booking')">Book</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div><!-- end page-destinations -->
+
+
+    <!-- PAGE: PACKAGES -->
+    <div id="page-packages" class="page">
+
+        <div class="page-hero">
+            <h1>Our Packages</h1>
+            <p>Everything included flights, hotels, and experiences.</p>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="packages-grid">
+
+                    <!-- Package Card 1 -->
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="photos/santorini- greece.jpg" alt="Greece Package">
+                        </div>
+                        <div class="package-body">
+                            <span class="package-tag">Most Popular</span>
+                            <h3>Greek Island Getaway</h3>
+                            <p>5 nights in Santorini with flights, transfers and daily breakfast included.</p>
+                            <ul class="package-includes">
+                                <li>✓ Return flights</li>
+                                <li>✓ 5-night hotel stay</li>
+                                <li>✓ Daily breakfast</li>
+                                <li>✓ Airport transfers</li>
+                            </ul>
+                            <div class="package-footer">
+                                <div class="price">12,090 AED <span>/ person</span></div>
+                                <button class="btn-primary" onclick="showPage('booking')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package Card 2 -->
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="photos/Bali-indonesia.jpg" alt="Bali Package">
+                        </div>
+                        <div class="package-body">
+                            <span class="package-tag">Best Value</span>
+                            <h3>Ultimate Bali Experience</h3>
+                            <p>7 nights exploring temples, rice terraces and the best beaches in Bali.</p>
+                            <ul class="package-includes">
+                                <li>✓ Return flights</li>
+                                <li>✓ 7-night villa stay</li>
+                                <li>✓ Daily breakfast</li>
+                                <li>✓ Private guide & transfers</li>
+                            </ul>
+                            <div class="package-footer">
+                                <div class="price">12,290 AED <span>/ person</span></div>
+                                <button class="btn-primary" onclick="showPage('booking')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package Card 3 -->
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="photos/ankara turkey.webp" alt="Turkey Package">
+                        </div>
+                        <div class="package-body">
+                            <span class="package-tag">Cultural Pick</span>
+                            <h3>Turkey Heritage Tour</h3>
+                            <p>8 nights discovering the ancient history and stunning landscapes of Turkey.</p>
+                            <ul class="package-includes">
+                                <li>✓ Return flights</li>
+                                <li>✓ 8-night hotel stay</li>
+                                <li>✓ Guided tours included</li>
+                                <li>✓ All entrance fees</li>
+                            </ul>
+                            <div class="package-footer">
+                                <div class="price">15,880 AED <span>/ person</span></div>
+                                <button class="btn-primary" onclick="showPage('booking')">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div><!-- end page-packages -->
+
+
+    <!-- PAGE GALLERY -->
+    <div id="page-gallery" class="page">
+
+        <div class="page-hero">
+            <h1>Travel Gallery</h1>
+            <p>Moments from around the world get inspired for your next trip.</p>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="gallery-grid">
+                    <!-- Each image opens in a lightbox when clicked -->
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/santorini- greece.jpg" alt="Santorini">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/Bali-indonesia.jpg" alt="Bali">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/ankara turkey.webp" alt="Turkey">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/hero1.avif" alt="Maldives">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/random.jpg" alt="Random">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/random1.jpg" alt="Random">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/rndm.avif" alt="Random">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/japan.avif" alt="Kyoto">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="photos/Paris.jpg" alt="Paris">
+                        <div class="gallery-overlay">+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- end page-gallery -->
+
+
+    <!-- PAGE: CONTACT -->
+    <div id="page-contact" class="page">
+
+        <div class="page-hero">
+            <h1>Get in Touch</h1>
+            <p>Dream it. Tell us. We'll make it happen.</p>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-layout">
+
+                    <!-- Left side: contact info -->
+                    <div class="contact-info">
+                        <h3>Let's plan your perfect journey</h3>
+                        <p>Whether you have a destination in mind or just want to explore your options, our team is here
+                            to help.</p>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h5>Address</h5>
+                                <p>42, Al Reem Island <br>Abu Dhabi, UAE</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+971560000600</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@holidae.ae</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right side: contact form -->
+                    <div class="contact-form">
+                        <h3>Send us a message</h3>
+                        <!-- novalidate means we handle validation ourselves in JS -->
+                        <form id="contactForm" novalidate>
+
+                            <div class="form-row">
+                                <div class="form-group" id="fg-firstname">
+                                    <label>First Name</label>
+                                    <input type="text" id="firstName" placeholder="Stan">
+                                    <span class="error-msg">Please enter your first name.</span>
+                                </div>
+                                <div class="form-group" id="fg-lastname">
+                                    <label>Last Name</label>
+                                    <input type="text" id="lastName" placeholder="Lee">
+                                    <span class="error-msg">Please enter your last name.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="fg-email">
+                                <label>Email Address</label>
+                                <input type="email" id="email" placeholder="stan@example.com">
+                                <span class="error-msg">Please enter a valid email address.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Interested In</label>
+                                <select>
+                                    <option value="">Select a destination…</option>
+                                    <option>Santorini, Greece</option>
+                                    <option>Ankara, Turkey</option>
+                                    <option>Bali, Indonesia</option>
+                                    <option>Maldives</option>
+                                    <option>Kyoto, Japan</option>
+                                    <option>Paris, France</option>
+                                    <option>Not sure yet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="fg-message">
+                                <label>Your Message</label>
+                                <textarea id="message" placeholder="Tell us about your dream trip…"></textarea>
+                                <span class="error-msg">Please write a short message.</span>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- end page-contact -->
+
+    <!-- PAGE: BOOKING -->
+    <div id="page-booking" class="page">
+
+        <div class="page-hero">
+            <h1>Book Your Trip</h1>
+            <p>Enter your details and we’ll contact you shortly.</p>
+        </div>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="contact-form">
+                    <h3>Your Booking Details</h3>
+
+                    <form id="bookingForm">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" placeholder="Stan" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" placeholder="Lee" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="stan@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Destination</label>
+                            <select>
+                                <option>Santorini, Greece</option>
+                                <option>Bali, Indonesia</option>
+                                <option>Ankara, Turkey</option>
+                                <option>Maldives</option>
+                                <option>Kyoto, Japan</option>
+                                <option>Paris, France</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Travel Date</label>
+                            <input type="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea placeholder="Additional Requests?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width:100%">
+                            Submit Booking
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- BOOKING POPUP -->
+    <!-- Hidden by default. Opens when "Book Now" is clicked -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <button class="popup-close" onclick="closePopup()">✕</button>
+            <div class="popup-icon">🎉</div>
+            <h3>Booking Request Received!</h3>
+            <p>Thank you for choosing Holidae. One of our travel specialists will contact you within 24 hours.</p>
+            <button class="btn-primary" onclick="closePopup()">Great, Thanks!</button>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">Holida<span>e</span></div>
+                <p>Crafting extraordinary journeys since 2009. Travel is the greatest investment you can make in
+                    yourself.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#" onclick="showPage('destinations')">Destinations</a></li>
+                    <li><a href="#" onclick="showPage('packages')">Packages</a></li>
+                    <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">info@holidae.ae</a></li>
+                    <li><a href="#">+971 560 000600</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Holidae Travel. All rights reserved.</span>
+        </div>
+    </footer>
+
+
+
+
+    <!-- LIGHTBOX  -->
+    <!-- Hidden by default. Opens when a gallery image is clicked -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightboxImg" src="" alt="Gallery Image">
+    </div>
+
+
+    <!--  JavaScript file placed at the bottom so HTML loads first -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
